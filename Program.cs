@@ -33,6 +33,10 @@ namespace KerasNetXor2
             //Load model and weight
             var loaded_model = Sequential.ModelFromJson(File.ReadAllText("model.json"));
             loaded_model.LoadWeight("model.h5");
+
+            var result = loaded_model.Predict(x);
+            Console.WriteLine("Предсказание для [{0}] = [{1}]", x.ToString(), result.ToString());
+
         }
     }
 }
